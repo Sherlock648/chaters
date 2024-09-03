@@ -1,0 +1,6 @@
+{
+  "type": "module",
+  "dependencies": {
+  "openai": "gpt-3.5-turbo"
+}
+}

@@ -1,0 +1,46 @@
+{
+  "manifest_version": 3,
+  "name": "AI Chat Help",
+  "version": "1.0",
+  "description": "Генерирование сообщений, исходя из последней переписки",
+  "permissions": ["storage", "activeTab", "clipboardWrite", "clipboardRead", "webNavigation", "scripting", "https://web.telegram.org/k/*", "tabs", "cookies"],
+  "action": {
+    "default_icon": {
+      "16": "get_started16.png",
+      "32": "get_started32.png",
+      "48": "get_started48.png",
+      "128": "get_started128.png"
+    },
+    "icons": {
+      "16": "get_started16.png",
+      "32": "get_started32.png",
+      "48": "get_started48.png",
+      "128": "get_started128.png"
+    },
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://web.telegram.org/k/*"],
+      "js": ["axios.min.js", "content.js", "popup.js", "node.js"],
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["popup.js"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'",
+    "sandbox": "sandbox allow-scripts; script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "default-src": ["'self'", "https:"],
+    "script-src": ["'self'", "https://cdn.jsdelivr.net", "'unsafe-eval'", "'unrestricted'"]
+  }
+}
