@@ -1,0 +1,52 @@
+body {
+  font-family: 'Comic Sans MS', sans-serif;
+  text-align: center;
+  font-size: 10px;
+  width: 350px;
+}
+
+.generateButton:hover {
+  background-color: #41ac26;
+  color: white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  -webkit-transform: scale(0.9);
+  -ms-transform: scale(0.9);
+  transform: scale(0.9);
+  transition-duration: 1s;
+}
+
+.generateButton {
+  font-family: 'Comic Sans MS', sans-serif;
+  display: inline-block;
+  padding: 15px 25px;
+  font-size: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 15px;
+  transition: background-color 0.3s, color 0.3s, transform 0.3s, box-shadow 0.3s;
+  background-color: #4CAF50;
+  color: #ffffff;
+  text-align: center;
+  text-decoration: none;
+  overflow: hidden;
+  position: relative;
+  margin: 5px;
+  width: 290px;
+}
+
+.generateButton::before {
+  content: '';
+  background: linear-gradient(45deg, #dfff6bb6, #55c4ccc7);
+  position: absolute;
+  top: -15px;
+  left: -15px;
+  width: calc(100% + 30px);
+  height: calc(100% + 30px);
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.generateButton:hover::before {
+  opacity: 1;
+}

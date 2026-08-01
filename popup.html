@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Message Generator</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/ 'unsafe-eval'; object-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/npm/ 'unsafe-eval'; object-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net 'unsafe-eval'; object-src 'self'">
+  <meta http-equiv="Content-Security-Policy" content="script-src 'self' https://cdn.jsdelivr.net/npm/openai;">
+</head>
+<body>
+  <div id="response">Здесь будет ответ</div>
+  <button class="generateButton" data-type="question">Генерировать вопрос</button>
+  <button class="generateButton" data-type="message">Генерировать сообщение</button>
+  <button class="generateButton" data-type="flirt">Генерировать флирт сообщение</button>
+  <button class="generateButton" data-type="greeting">Генерировать приветку</button>
+  <div id="status">Статус: готов</div>
+  <div id="progress">Прогресс: 0%</div>
+  <script src="./axios.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/openai" nonce="random_nonce"></script>
+  <script type="module" src="./popup.js"></script>
+</body>
+</html>
